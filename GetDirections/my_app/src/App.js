@@ -8,7 +8,7 @@ function App() {
   const [y, setY] = useState(0);
   const [direction, setDirection] = useState(0);
   // define value to get value of input text
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
   // define handleCalculateDirection function to get x-axis, y-axis, direction  
   const handleCalculateDirection = (e) => {
     // prevent page from refreshing
@@ -26,7 +26,7 @@ function App() {
         <Row className="justify-content-center">
           <Col sm="10" className="d-flex justify-content-between ">
             <Form onSubmit={handleCalculateDirection}>
-              <input className="custom-input" type="text" value={value} onChange={(e)=>setValue(e.target.value)}/>
+              <input className="custom-input" type="text" value={value} onChange={(e)=>setValue(e.target.value.toUpperCase())}/>
               <input
                 type="submit"
                 className="custom-btn"

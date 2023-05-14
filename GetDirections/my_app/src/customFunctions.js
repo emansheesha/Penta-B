@@ -14,7 +14,9 @@ const CalculateDirection = (string_direction) => {
   const x = x_axis * 2;
   //   call GetYAxis function to get y
   const y = GetYAxis(arr_direction, x_axis);
-  return { x: x, y: y, direction: direction };
+  return direction === "not valid"
+    ? { x: "not valid", y: "not valid", direction: "not valid" }
+    : { x: x, y: y, direction: direction };
 };
 // define GetYAxis function to get y
 const GetYAxis = (arr_direction, x_axis) => {
@@ -29,7 +31,6 @@ const GetYAxis = (arr_direction, x_axis) => {
 // define GetDirection function to get Direction
 const GetDirection = (arr_direction) => {
   const dir = arr_direction[0];
-  console.log(dir);
   //   use object literal to get direction instead of using switch or if
   const direction = {
     L: () => "WEST",
@@ -37,7 +38,6 @@ const GetDirection = (arr_direction) => {
     B: () => "SOUTH",
     F: () => "NORTH",
   };
-  console.log(direction[dir]());
-  return direction[dir]();
+  return direction[dir] ? direction[dir]() : "not valid";
 };
 export default CalculateDirection;
