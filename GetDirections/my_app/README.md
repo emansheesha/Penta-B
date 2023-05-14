@@ -10,3 +10,8 @@ if we want get y it will be equal the sum of  (x-1) (here equals 2) and the star
 if start or end equal (r or l) it returns 0 else returns 1
 so in the problem solving it'll be starts with 1 and ends with 1
 so the sum of start+ (x-1) +end equal (4).
+----------------- 
+ how to use application?
+ open terminal
+ make sure that you are inside my_app file if you don't please run cd my_app command in terminal
+ then npm start
